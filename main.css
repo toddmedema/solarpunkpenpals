@@ -1,0 +1,708 @@
+/*
+* Skeleton V1.2
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 6/20/2012
+*/
+/* Table of Contents
+==================================================
+    #Base 960 Grid
+    #Tablet (Portrait)
+    #Mobile (Portrait)
+    #Mobile (Landscape)
+    #Clearing */
+/* #Reset & Basics (Inspired by E. Meyers)
+================================================== */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* #Base 960 Grid
+================================================== */
+.container {
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
+  padding: 0;
+}
+.container .column,
+.container .columns {
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.row {
+  margin-bottom: 20px;
+}
+/* Nested Column Classes */
+.column.alpha,
+.columns.alpha {
+  margin-left: 0;
+}
+.column.omega,
+.columns.omega {
+  margin-right: 0;
+}
+/* Base Grid */
+.container .one.column,
+.container .one.columns {
+  width: 40px;
+}
+.container .two.columns {
+  width: 100px;
+}
+.container .three.columns {
+  width: 160px;
+}
+.container .four.columns {
+  width: 220px;
+}
+.container .five.columns {
+  width: 280px;
+}
+.container .six.columns {
+  width: 340px;
+}
+.container .seven.columns {
+  width: 400px;
+}
+.container .eight.columns {
+  width: 460px;
+}
+.container .nine.columns {
+  width: 520px;
+}
+.container .ten.columns {
+  width: 580px;
+}
+.container .eleven.columns {
+  width: 640px;
+}
+.container .twelve.columns {
+  width: 700px;
+}
+.container .thirteen.columns {
+  width: 760px;
+}
+.container .fourteen.columns {
+  width: 820px;
+}
+.container .fifteen.columns {
+  width: 880px;
+}
+.container .sixteen.columns {
+  width: 940px;
+}
+.container .one-third.column {
+  width: 300px;
+}
+.container .two-thirds.column {
+  width: 620px;
+}
+/* Offsets */
+.container .offset-by-one {
+  padding-left: 60px;
+}
+.container .offset-by-two {
+  padding-left: 120px;
+}
+.container .offset-by-three {
+  padding-left: 180px;
+}
+.container .offset-by-four {
+  padding-left: 240px;
+}
+.container .offset-by-five {
+  padding-left: 300px;
+}
+.container .offset-by-six {
+  padding-left: 360px;
+}
+.container .offset-by-seven {
+  padding-left: 420px;
+}
+.container .offset-by-eight {
+  padding-left: 480px;
+}
+.container .offset-by-nine {
+  padding-left: 540px;
+}
+.container .offset-by-ten {
+  padding-left: 600px;
+}
+.container .offset-by-eleven {
+  padding-left: 660px;
+}
+.container .offset-by-twelve {
+  padding-left: 720px;
+}
+.container .offset-by-thirteen {
+  padding-left: 780px;
+}
+.container .offset-by-fourteen {
+  padding-left: 840px;
+}
+.container .offset-by-fifteen {
+  padding-left: 900px;
+}
+/* #Tablet (Portrait)
+================================================== */
+/* Note: Design for a width of 768px */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  .container {
+    width: 768px;
+  }
+  .container .column,
+  .container .columns {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .column.alpha,
+  .columns.alpha {
+    margin-left: 0;
+    margin-right: 10px;
+  }
+  .column.omega,
+  .columns.omega {
+    margin-right: 0;
+    margin-left: 10px;
+  }
+  .alpha.omega {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .container .one.column,
+  .container .one.columns {
+    width: 28px;
+  }
+  .container .two.columns {
+    width: 76px;
+  }
+  .container .three.columns {
+    width: 124px;
+  }
+  .container .four.columns {
+    width: 172px;
+  }
+  .container .five.columns {
+    width: 220px;
+  }
+  .container .six.columns {
+    width: 268px;
+  }
+  .container .seven.columns {
+    width: 316px;
+  }
+  .container .eight.columns {
+    width: 364px;
+  }
+  .container .nine.columns {
+    width: 412px;
+  }
+  .container .ten.columns {
+    width: 460px;
+  }
+  .container .eleven.columns {
+    width: 508px;
+  }
+  .container .twelve.columns {
+    width: 556px;
+  }
+  .container .thirteen.columns {
+    width: 604px;
+  }
+  .container .fourteen.columns {
+    width: 652px;
+  }
+  .container .fifteen.columns {
+    width: 700px;
+  }
+  .container .sixteen.columns {
+    width: 748px;
+  }
+  .container .one-third.column {
+    width: 236px;
+  }
+  .container .two-thirds.column {
+    width: 492px;
+  }
+  /* Offsets */
+  .container .offset-by-one {
+    padding-left: 48px;
+  }
+  .container .offset-by-two {
+    padding-left: 96px;
+  }
+  .container .offset-by-three {
+    padding-left: 144px;
+  }
+  .container .offset-by-four {
+    padding-left: 192px;
+  }
+  .container .offset-by-five {
+    padding-left: 240px;
+  }
+  .container .offset-by-six {
+    padding-left: 288px;
+  }
+  .container .offset-by-seven {
+    padding-left: 336px;
+  }
+  .container .offset-by-eight {
+    padding-left: 384px;
+  }
+  .container .offset-by-nine {
+    padding-left: 432px;
+  }
+  .container .offset-by-ten {
+    padding-left: 480px;
+  }
+  .container .offset-by-eleven {
+    padding-left: 528px;
+  }
+  .container .offset-by-twelve {
+    padding-left: 576px;
+  }
+  .container .offset-by-thirteen {
+    padding-left: 624px;
+  }
+  .container .offset-by-fourteen {
+    padding-left: 672px;
+  }
+  .container .offset-by-fifteen {
+    padding-left: 720px;
+  }
+}
+/*  #Mobile (Portrait)
+================================================== */
+/* Note: Design for a width of 360px */
+@media only screen and (max-width: 767px) {
+  .container {
+    width: 340px;
+  }
+  .container .columns,
+  .container .column {
+    margin: 0;
+  }
+  .container .one.column,
+  .container .one.columns,
+  .container .two.columns,
+  .container .three.columns,
+  .container .four.columns,
+  .container .five.columns,
+  .container .six.columns,
+  .container .seven.columns,
+  .container .eight.columns,
+  .container .nine.columns,
+  .container .ten.columns,
+  .container .eleven.columns,
+  .container .twelve.columns,
+  .container .thirteen.columns,
+  .container .fourteen.columns,
+  .container .fifteen.columns,
+  .container .sixteen.columns,
+  .container .one-third.column,
+  .container .two-thirds.column {
+    width: 340px;
+  }
+  /* Offsets */
+  .container .offset-by-one,
+  .container .offset-by-two,
+  .container .offset-by-three,
+  .container .offset-by-four,
+  .container .offset-by-five,
+  .container .offset-by-six,
+  .container .offset-by-seven,
+  .container .offset-by-eight,
+  .container .offset-by-nine,
+  .container .offset-by-ten,
+  .container .offset-by-eleven,
+  .container .offset-by-twelve,
+  .container .offset-by-thirteen,
+  .container .offset-by-fourteen,
+  .container .offset-by-fifteen {
+    padding-left: 0;
+  }
+}
+/* #Mobile (Landscape)
+================================================== */
+/* Note: Design for a width of 480px */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .container {
+    width: 420px;
+  }
+  .container .columns,
+  .container .column {
+    margin: 0;
+  }
+  .container .one.column,
+  .container .one.columns,
+  .container .two.columns,
+  .container .three.columns,
+  .container .four.columns,
+  .container .five.columns,
+  .container .six.columns,
+  .container .seven.columns,
+  .container .eight.columns,
+  .container .nine.columns,
+  .container .ten.columns,
+  .container .eleven.columns,
+  .container .twelve.columns,
+  .container .thirteen.columns,
+  .container .fourteen.columns,
+  .container .fifteen.columns,
+  .container .sixteen.columns,
+  .container .one-third.column,
+  .container .two-thirds.column {
+    width: 420px;
+  }
+}
+/* #Clearing
+================================================== */
+/* Self Clearing Goodness */
+.container:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+/* Use clearfix class on parent to clear nested columns,
+    or wrap each row of columns in a <div class="row"> */
+.clearfix:before,
+.clearfix:after,
+.row:before,
+.row:after {
+  content: "\0020";
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.row:after,
+.clearfix:after {
+  clear: both;
+}
+.row,
+.clearfix {
+  zoom: 1;
+}
+/* You can also use a <br class="clear" /> to clear columns */
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+/* ===== Site-specific ===== */
+/* General */
+body {
+  margin: 0 auto;
+  background: #e6f2e8;
+  color: #333;
+  font-family: "Source Serif 4", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5em;
+  line-height: 1.2;
+}
+#navbar,
+#footer {
+  background: #e6f2e8;
+}
+
+a {
+  color: #629aac;
+  text-decoration: none;
+  -webkit-transition: color 150ms linear;
+  -ms-transition: color 150ms linear;
+  transition: color 150ms linear;
+}
+a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #467584;
+}
+a:visited {
+  color: #467584;
+}
+.center {
+  text-align: center;
+}
+h1,
+h2,
+h3 {
+  font-family: "Big Shoulders", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+h2 {
+  font-size: 1.6em;
+  margin-bottom: 0.2em;
+}
+h3 {
+  font-size: 1.2em;
+  margin-top: 0.4em;
+}
+i {
+  font-style: italic;
+}
+strong {
+  font-weight: 600;
+}
+ol {
+  list-style-type: decimal;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+ol li {
+  padding-bottom: 0.2em;
+}
+button,
+.button {
+  color: #ffffff !important;
+  font-size: 1em;
+  font-family: "Big Shoulders", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.2;
+  padding: 0.1em 0.5em;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  background: #298bc5;
+  -webkit-transition: background-color 150ms linear;
+  -ms-transition: background-color 150ms linear;
+  transition: background-color 150ms linear;
+}
+button:hover,
+.button:hover {
+  cursor: pointer;
+  background: #49abe5;
+}
+input {
+  font-size: 1em;
+}
+.svgicon {
+  width: 1em;
+  height: 1em;
+  margin-top: 0.1em;
+  margin-bottom: -0.1em;
+}
+a .svgicon {
+  filter: invert(60%) sepia(49%) saturate(297%) hue-rotate(148deg)
+    brightness(85%) contrast(90%);
+}
+a:hover .svgicon {
+  filter: invert(43%) sepia(29%) saturate(566%) hue-rotate(148deg)
+    brightness(91%) contrast(90%);
+}
+
+/* Elements */
+#header {
+  margin-top: 1em;
+}
+#title h1 {
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 38px;
+  padding: 20px 0;
+  background: linear-gradient(30deg, #ffdf22, #55490b);
+  background: -webkit-linear-gradient(30deg, #ffdf22, #55490b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#content {
+  margin-top: -40px;
+}
+.columns {
+  padding: 20px 0;
+}
+@media only screen and (max-width: 767px) {
+  .mobileNoBottom {
+    padding-bottom: 0;
+  }
+}
+.mobileBorder {
+  border-bottom: 1px solid #ccc;
+}
+p {
+  margin-bottom: 1em;
+}
+hr {
+  margin: 10px 0px;
+  top: 5px;
+  position: relative;
+}
+
+#footer {
+  text-align: center;
+  width: 100%;
+  margin-top: 0.5em;
+  padding: 0.3em;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  height: 1.7em;
+}
+
+/* Screen size adjustments */
+@media only screen and (max-width: 420px) {
+  #title h1 {
+    font-size: 44px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  body {
+    font-size: 1.2em;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #title h1 {
+    font-size: 68px;
+    padding: 0.1em 0 0.2em 0;
+  }
+  .mobileBorder {
+    border-bottom: none;
+  }
+  .desktopBorder {
+    border-bottom: 1px solid #ccc;
+  }
+}
+@media only screen and (min-width: 960px) {
+  #title h1 {
+    font-size: 84px;
+  }
+}
