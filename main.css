@@ -608,7 +608,7 @@ button,
 button:hover,
 .button:hover {
   cursor: pointer;
-  background: #ffdf22;
+  background: #49abe5;
 }
 input {
   font-size: 1em;
@@ -659,12 +659,43 @@ hr {
   top: 5px;
   position: relative;
 }
+div.hr {
+  text-align: center;
+  width: auto;
+  position: relative;
+  margin: 1em 0;
+}
+div.hr span {
+  content: " ";
+  border-top: 1px solid #55490b;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  z-index: -1;
+}
+div.hrContent {
+  background-color: #e6f2e8;
+  display: inline-block;
+  padding: 0 1em;
+}
+
 .handwritten {
   font-family: "Caveat", cursive;
   font-weight: 400;
 }
 .handwritten strong {
   font-family: "Source Serif 4", system-ui;
+}
+
+.cta {
+  text-align: center;
+}
+.cta button a {
+  color: white !important;
+}
+.cta button a:hover {
+  text-decoration: none;
 }
 
 #footer {
@@ -683,9 +714,6 @@ hr {
 @media only screen and (max-width: 420px) {
   #title h1 {
     font-size: 48px;
-  }
-  h2 {
-    font-size: 24px;
   }
   body {
     font-size: 1.2em;
@@ -719,19 +747,19 @@ hr {
   box-sizing: inherit;
 }
 .glide__controls {
-  text-align: center;
-  margin-top: -0.5em;
+  text-align: right;
+  margin-top: -2.3em;
   position: relative;
   z-index: 999;
 }
 .glide__controls button {
-  color: black !important;
+  color: #333 !important;
   background: none;
   border: none;
   font-family: "Source Serif 4", system-ui;
 }
 .glide__controls button:hover {
-  background: #ffdf22;
+  background: #49abe5;
 }
 .glide__track {
   overflow: hidden;
@@ -776,15 +804,19 @@ hr {
 .glide__bullets {
   -webkit-touch-callout: none;
   user-select: none;
-  text-align: center;
+  text-align: right;
   margin-top: -0.5em;
   margin-bottom: 0.5em;
+  margin-right: 0.25em;
 }
 .glide__bullet {
   background: #ccc;
 }
 .glide__bullet--active {
-  background: #55490b;
+  background: #298bc5;
+}
+.glide__bullet:hover {
+  background: #49abe5;
 }
 .glide--rtl {
   direction: rtl;
