@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Solarpunk Pen Pals</title>
-    <meta name="description" content="An interactive solarpunk storytelling activity." />
+    <meta name="description" content="A cozy, free storytelling game for 2+ people." />
     <meta
       name="keywords"
       content="Climate, Solarpunk, Game, Story, Roleplaying, Character Building, Storytelling"
@@ -30,13 +30,21 @@
     <meta property="og:title" content="Solarpunk Pen Pals" />
     <meta property="og:site_name" content="Solarpunk Pen Pals" />
     <meta property="og:type" content="game" />
-    <meta property="og:description" content="An interactive solarpunk storytelling activity." />
+    <meta property="og:description" content="A cozy, free storytelling game for 2+ people." />
     <meta property="og:url" content="https://solarpunkpenpals.com" />
     <meta property="og:image" content="https://solarpunkpenpals.com/img/logo.jpg" />
     <meta name="twitter:image:alt" content="Solarpunk Pen Pals" />
     <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body>
+    <div
+      id="liminalspace"
+      style="position: fixed; bottom: 20px; right: 10px; width: 64px; z-index: 9999"
+    >
+      <a href="https://limi.space" target="_blank"
+        ><img src="img/liminal-white.png" style="width: 100%"
+      /></a>
+    </div>
     <div id="header" class="container center">
       <div id="title" class="sixteen">
         <h1>Solarpunk Pen Pals</h1>
@@ -48,7 +56,7 @@
           <!-- SVG source: https://www.svgrepo.com/ -->
           <img src="img/svg/people.svg" class="svgicon" alt="Players" /> 2+ players |
           <img src="img/svg/time.svg" class="svgicon" alt="Time" /> 1 hour |
-          <img src="img/svg/age-6-plus.svg" class="svgicon" alt="Ages" /> Ages 6+
+          <img src="img/svg/age-9-plus.svg" class="svgicon" alt="Ages" /> Ages 9+
         </p>
         <p>
           <strong>solarpunk:</strong> an emerging movement which envisions a regenerative future
@@ -71,7 +79,7 @@
         </p>
         <img
           style="width: 100%; max-width: 700px; margin: auto; display: block"
-          src="img/Seacliff Community Garden Taylor Seamount.jpg"
+          src="img/Seacliff Community Garden by Taylor Seamount.jpg"
           alt="Seacliff Community Garden by Taylor Seamount"
         />
         <label style="text-align: center; color: #555; font-size: 60%; display: block"
@@ -135,6 +143,47 @@
             Using your value and role as inspiration, fill out the rest of your character sheet.
           </li>
         </ol>
+        <p>
+          <i>Need inspiration? <a id="openCharacterInspiration">Click Here</a></i>
+        </p>
+
+        <div id="characterInspirations">
+          <img
+            loading="lazy"
+            src="img/Solarpunk Farms Dome by Taylor Seamount.jpg"
+            alt="Solarpunk Farms Dome by Taylor Seamount"
+          />
+          <img
+            loading="lazy"
+            src="img/Redwood Highrise by Taylor Seamount.jpg"
+            alt="Redwood Highrise by Taylor Seamount"
+          />
+          <img
+            loading="lazy"
+            src="img/Traffic Diptych by Taylor Seamount.jpg"
+            alt="Traffic Diptych by Taylor Seamount"
+          />
+          <img
+            loading="lazy"
+            src="img/Youth House by Taylor Seamount.jpg"
+            alt="Youth House by Taylor Seamount"
+          />
+          <img
+            loading="lazy"
+            src="img/Phoenix Village by Taylor Seamount.jpg"
+            alt="Phoenix Village by Taylor Seamount"
+          />
+          <label
+            style="
+              text-align: center;
+              color: #555;
+              font-size: 60%;
+              display: block;
+              margin-bottom: 2em;
+            "
+            >Art by <a href="https://taylorseamount.com" target="_blank">Taylor Seamount</a></label
+          >
+        </div>
 
         <h2>Phase 3: Relationship Building</h2>
         <p>As a pair:</p>
@@ -181,18 +230,7 @@
         </div>
 
         <h2>Archives</h2>
-        <div class="glide">
-          <div class="glide__controls" data-glide-el="controls">
-            <button data-glide-dir="<"><<</button>
-            <button data-glide-dir=">">>></button>
-          </div>
-          <div class="glide__bullets" data-glide-el="controls[nav]">
-            <button class="glide__bullet" data-glide-dir="=0"></button>
-            <button class="glide__bullet" data-glide-dir="=1"></button>
-            <button class="glide__bullet" data-glide-dir="=2"></button>
-            <button class="glide__bullet" data-glide-dir="=3"></button>
-            <button class="glide__bullet" data-glide-dir="=4"></button>
-          </div>
+        <div id="glide">
           <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides handwritten">
               <li class="glide__slide">
@@ -326,21 +364,36 @@
                 <p><strong>Age:</strong> 42</p>
                 <p><strong>Movement Role:</strong> Imaginator</p>
                 <p><strong>Motivating Value:</strong> Truth</p>
-                <p><strong>Living situation:</strong> Lives in a cabin outside an artists’ collective house by the sea near Davenport.</p>
+                <p>
+                  <strong>Living situation:</strong> Lives in a cabin outside an artists’ collective
+                  house by the sea near Davenport.
+                </p>
                 <p><strong>Notable quirk:</strong> Only eats the most bland foods.</p>
                 <p><strong>Hobby:</strong> Creating animal costumes from found materials.</p>
+                <p><strong>Fav way to relax:</strong> Watch vintage kids’ cartoons</p>
                 <p>
-                  <strong>Fav way to relax:</strong> Watch vintage kids’ cartoons
-                </p>
-                <p>
-                  <strong>What they did last Tuesday in their role:</strong> Costumed performance art speaking as different animals making their needs known in the community. Speaks in riddles, jokes, slapstick humor, paradox, song, poetry, and scientific data. Advised by ecologists and scientists. Loosely transmutes the information in ways that frustrate scientist collaborators but his unsubstantiated rants are sometimes prophetic. 
+                  <strong>What they did last Tuesday in their role:</strong> Costumed performance
+                  art speaking as different animals making their needs known in the community.
+                  Speaks in riddles, jokes, slapstick humor, paradox, song, poetry, and scientific
+                  data. Advised by ecologists and scientists. Loosely transmutes the information in
+                  ways that frustrate scientist collaborators but his unsubstantiated rants are
+                  sometimes prophetic.
                 </p>
                 <p><strong>Letter to their friend:</strong></p>
                 <p>Dear Cat,</p>
                 <p>
-                  Thank you so much for hosting that salon at Sparkle Paint House! I’m afraid my rendition of that horny golden crowned sparrow may have disrupted the gentle atmosphere. Next time if you’d like a more grounded performance from me, maybe schedule it for late summer after nesting season. 
+                  Thank you so much for hosting that salon at Sparkle Paint House! I’m afraid my
+                  rendition of that horny golden crowned sparrow may have disrupted the gentle
+                  atmosphere. Next time if you’d like a more grounded performance from me, maybe
+                  schedule it for late summer after nesting season.
                 </p>
-                <p>Folks around here could really use a reminder of conviviality right now. Some people are mistrustful of the rapid scaling of the transformative justice system in response to the new flue spreading in the jails. Of course there will be some bumps, but maybe if the Demigod of Friendliness and Good Tea can cast a good vibes spell over the community we can agree to give each other more grace.</p>
+                <p>
+                  Folks around here could really use a reminder of conviviality right now. Some
+                  people are mistrustful of the rapid scaling of the transformative justice system
+                  in response to the new flue spreading in the jails. Of course there will be some
+                  bumps, but maybe if the Demigod of Friendliness and Good Tea can cast a good vibes
+                  spell over the community we can agree to give each other more grace.
+                </p>
                 <p>Doo-Da-DOO-Dooooo (golden crowned sparrow call),</p>
                 <p>Cryptid Jack</p>
               </li>
@@ -350,23 +403,45 @@
                 <p><strong>Age:</strong> 27</p>
                 <p><strong>Movement Role:</strong> Hacker</p>
                 <p><strong>Motivating Value:</strong> Community</p>
-                <p><strong>Living situation:</strong> Works for a newspaper; acts essentially as a campaign finance and political corruption watchdog</p>
+                <p>
+                  <strong>Living situation:</strong> Works for a newspaper; acts essentially as a
+                  campaign finance and political corruption watchdog
+                </p>
                 <p><strong>Notable quirk:</strong> Massive sticker collection on laptop</p>
                 <p><strong>Hobby:</strong> Volunteering at bike repair co-op.</p>
+                <p><strong>Fav way to relax:</strong> Cycling</p>
                 <p>
-                  <strong>Fav way to relax:</strong> Cycling
-                </p>
-                <p>
-                  <strong>What they did last Tuesday in their role:</strong> Researched recent luxury trip a political leader took to determine if any gifts/trip expenses were improperly/illegally exchanged.
+                  <strong>What they did last Tuesday in their role:</strong> Researched recent
+                  luxury trip a political leader took to determine if any gifts/trip expenses were
+                  improperly/illegally exchanged.
                 </p>
                 <p><strong>Letter to their friend:</strong></p>
                 <p>Hey Cuz!</p>
                 <p>
-                  I hope everything’s ok down in Aptos. Thank you again for keeping me and the rest of the fam up to date on Anita’s condition and treatments and how we can support her and you. You have been such an incredible partner to her, and I’m so happy and grateful to have you as part of our family.
+                  I hope everything’s ok down in Aptos. Thank you again for keeping me and the rest
+                  of the fam up to date on Anita’s condition and treatments and how we can support
+                  her and you. You have been such an incredible partner to her, and I’m so happy and
+                  grateful to have you as part of our family.
                 </p>
-                <p>Things are going pretty well with me. Work’s been keeping me busy for sure. There’s been some big dark web activity happening surroundign the upcoming NeoJeffersonian Party convention that my paper has been investigating. One of my co-workers just published a big expose about it last week. You might have seen it on the local bulletin.</p>
-                <p>Besides that I’ve been training for my third Seattle to Portland bike ride which I’m super excited for. Next time you’re in Seattle (and Anita if she’s recovered more), let me know if you’d like tme to set up up with a bike and would like to go on some local rides. I think it’s such a wonderful way to explore a city.</p>
-                <p>How’s life/work/everythign treating you on your end? What have you been reading recently? I’m so excited to come visit our 4th of July week. Let me know if there’s any party things I should reserve from the library ahead of time. Happy to help however I can.</p>
+                <p>
+                  Things are going pretty well with me. Work’s been keeping me busy for sure.
+                  There’s been some big dark web activity happening surroundign the upcoming
+                  NeoJeffersonian Party convention that my paper has been investigating. One of my
+                  co-workers just published a big expose about it last week. You might have seen it
+                  on the local bulletin.
+                </p>
+                <p>
+                  Besides that I’ve been training for my third Seattle to Portland bike ride which
+                  I’m super excited for. Next time you’re in Seattle (and Anita if she’s recovered
+                  more), let me know if you’d like tme to set up up with a bike and would like to go
+                  on some local rides. I think it’s such a wonderful way to explore a city.
+                </p>
+                <p>
+                  How’s life/work/everythign treating you on your end? What have you been reading
+                  recently? I’m so excited to come visit our 4th of July week. Let me know if
+                  there’s any party things I should reserve from the library ahead of time. Happy to
+                  help however I can.
+                </p>
                 <p>Much love, Tyler</p>
               </li>
 
@@ -377,19 +452,37 @@
                 <p><strong>Motivating Value:</strong> Ingenuity</p>
                 <p><strong>Living situation:</strong> Tiny home on family complex</p>
                 <p><strong>Notable quirk:</strong> Collects exotic bulb plants</p>
+                <p><strong>Fav way to relax:</strong> Reading in a hammock</p>
                 <p>
-                  <strong>Fav way to relax:</strong> Reading in a hammock
-                </p>
-                <p>
-                  <strong>What they did last Tuesday in their role:</strong> Subdivided a large open concept home for energy efficiency and communal living.
+                  <strong>What they did last Tuesday in their role:</strong> Subdivided a large open
+                  concept home for energy efficiency and communal living.
                 </p>
                 <p><strong>Letter to their friend:</strong></p>
-                <p>Hey Tyler. Hope you’re well and enjoyed the Equinox. Anita and I send our gratitude for the turkeytail tincture. Anita says the turkeytail here just doesn’t have the same potency as the Cascadia varieties.</p>
                 <p>
-                  She’s doing better but it’s of course a slow recovery. She’s been taking short walks in the garden and even made it down to the naighborhood barn breakfast on Sunday (riding the golf cart of course). But it says a lot that she was able to enjoy all the commotion. She wants everyone to know she sends her love and will be up for a video call soon. You all know how she likes her quiet. She wants news on her nibblings in the meantime tho. 
+                  Hey Tyler. Hope you’re well and enjoyed the Equinox. Anita and I send our
+                  gratitude for the turkeytail tincture. Anita says the turkeytail here just doesn’t
+                  have the same potency as the Cascadia varieties.
                 </p>
-                <p>My work in the naighborhood has been really dynamic lately. The Butes have decided to finally subdivide their cavernous home and it’s been an interesting challenge. It’s basically just a giant box with rooms around the edge of the first and second floors. They want to be able to cool it better this summer and also make space for Jenny’s nibbling to move in with thir family. They’ve finally admitted to being flooded out of Rio Del Mar.</p>
-                <p>Anyway being able to get to know you better has def been a silver lining to this difficult time. Hope you folks can make the trip again soon.</p>
+                <p>
+                  She’s doing better but it’s of course a slow recovery. She’s been taking short
+                  walks in the garden and even made it down to the naighborhood barn breakfast on
+                  Sunday (riding the golf cart of course). But it says a lot that she was able to
+                  enjoy all the commotion. She wants everyone to know she sends her love and will be
+                  up for a video call soon. You all know how she likes her quiet. She wants news on
+                  her nibblings in the meantime tho.
+                </p>
+                <p>
+                  My work in the naighborhood has been really dynamic lately. The Butes have decided
+                  to finally subdivide their cavernous home and it’s been an interesting challenge.
+                  It’s basically just a giant box with rooms around the edge of the first and second
+                  floors. They want to be able to cool it better this summer and also make space for
+                  Jenny’s nibbling to move in with thir family. They’ve finally admitted to being
+                  flooded out of Rio Del Mar.
+                </p>
+                <p>
+                  Anyway being able to get to know you better has def been a silver lining to this
+                  difficult time. Hope you folks can make the trip again soon.
+                </p>
                 <p>Interdependently, Hally</p>
               </li>
             </ul>
@@ -412,7 +505,46 @@
 
     <script type="text/javascript" src="glide.min.js"></script>
     <script>
-      new Glide(".glide").mount();
+      function insertGlideControls() {
+        const glide = document.getElementById("glide");
+        if (!glide) return;
+        glide.classList.add("glide");
+        const controlsHTML = `
+          <div class="glide__controls" data-glide-el="controls">
+            <button data-glide-dir="<">&lt;&lt;</button>
+            <button data-glide-dir=">">&gt;&gt;</button>
+          </div>
+          <div class="glide__bullets" data-glide-el="controls[nav]">
+            <button class="glide__bullet" data-glide-dir="=0"></button>
+            <button class="glide__bullet" data-glide-dir="=1"></button>
+            <button class="glide__bullet" data-glide-dir="=2"></button>
+            <button class="glide__bullet" data-glide-dir="=3"></button>
+            <button class="glide__bullet" data-glide-dir="=4"></button>
+          </div>
+        `;
+        const temp = document.createElement("div");
+        temp.innerHTML = controlsHTML;
+        // Insert each child at the top of #glide
+        for (let i = temp.children.length - 1; i >= 0; i--) {
+          glide.insertBefore(temp.children[i], glide.firstChild);
+        }
+        new Glide(".glide").mount();
+      }
+      window.onload = insertGlideControls;
+
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("openCharacterInspiration").onclick = function () {
+          if (document.getElementById("characterInspirations").style.display === "block") {
+            document.getElementById("characterInspirations").style.display = "none";
+          } else {
+            document.getElementById("characterInspirations").style.display = "block";
+            document.getElementById("characterInspirations").style.visibility = "visible";
+            setTimeout(() => {
+              document.getElementById("characterInspirations").style.opacity = "1";
+            }, 50);
+          }
+        };
+      });
     </script>
   </body>
 </html>

@@ -713,10 +713,13 @@ div.hrContent {
 /* Screen size adjustments */
 @media only screen and (max-width: 420px) {
   #title h1 {
-    font-size: 48px;
+    font-size: 46px;
   }
   body {
     font-size: 1.2em;
+  }
+  #liminalspace {
+    width: 48px !important;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -738,12 +741,15 @@ div.hrContent {
 }
 
 /* GLIDE */
-.glide {
+.glide,
+.glide-images {
   position: relative;
   width: 100%;
   box-sizing: border-box;
 }
-.glide * {
+.glide *,
+,
+.glide-images * {
   box-sizing: inherit;
 }
 .glide__controls {
@@ -761,10 +767,12 @@ div.hrContent {
 .glide__controls button:hover {
   background: #49abe5;
 }
-.glide__track {
+.glide .glide__track,
+.glide-images .glide__track {
   overflow: hidden;
 }
-.glide__slides {
+.glide .glide__slides,
+.glide-images .glide__slides {
   position: relative;
   width: 100%;
   list-style: none;
@@ -779,10 +787,12 @@ div.hrContent {
   flex-wrap: nowrap;
   will-change: transform;
 }
-.glide__slides--dragging {
+.glide .glide__slides--dragging,
+.glide-images .glide__slides--dragging {
   user-select: none;
 }
-.glide__slide {
+.glide .glide__slide,
+.glide-images .glide__slide {
   width: 100%;
   height: 100%;
   flex-shrink: 0;
@@ -790,8 +800,10 @@ div.hrContent {
   user-select: none;
   -webkit-touch-callout: none;
   -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
 }
-.glide__slide a {
+.glide .glide__slide a,
+.glide-images .glide__slide a {
   user-select: none;
   -webkit-user-drag: none;
   -moz-user-select: none;
@@ -820,4 +832,18 @@ div.hrContent {
 }
 .glide--rtl {
   direction: rtl;
+}
+
+#characterInspirations {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+#characterInspirations img {
+  max-height: 90vh;
+  max-width: 100%;
+  margin: auto;
+  display: block;
+  margin-bottom: 1em;
 }
