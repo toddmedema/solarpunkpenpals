@@ -1,12 +1,17 @@
-let mcInstalled = false;
-
 function setLocalStorage(key, value) {
-  localStorage.setItem(key, value);
+  try {
+    localStorage.setItem(key, value);
+  } catch {
+    // Dismissing the bar still works when browser storage is unavailable.
+  }
 }
 
 function getLocalStorage(key) {
-  const value = localStorage.getItem(key);
-  return value;
+  try {
+    return localStorage.getItem(key);
+  } catch {
+    return null;
+  }
 }
 
 function createMailchimpForm(buttonText) {
@@ -18,32 +23,17 @@ function createMailchimpForm(buttonText) {
 
   const form = document.createElement("form");
   form.action =
-    "https://fabricate.us10.list-manage.com/subscribe/post?u=792afb261df839e73b669f83f&amp;id=193b65f85f&amp;f_id=00fd56e4f0";
+    "https://fabricate.us10.list-manage.com/subscribe/post?u=792afb261df839e73b669f83f&id=193b65f85f&f_id=00fd56e4f0";
   form.method = "post";
   form.id = "mc-embedded-subscribe-form";
   form.name = "mc-embedded-subscribe-form";
   form.className = "validate";
   form.target = "_blank";
+  form.rel = "noopener noreferrer";
+  form.setAttribute("aria-label", "Anthology launch newsletter");
 
   const scrollDiv = document.createElement("div");
   scrollDiv.id = "mc_embed_signup_scroll";
-
-  const responsesDiv = document.createElement("div");
-  responsesDiv.id = "mce-responses";
-
-  const errorResponse = document.createElement("div");
-  errorResponse.className = "response";
-  errorResponse.id = "mce-error-response";
-  errorResponse.style.display = "none";
-
-  const successResponse = document.createElement("div");
-  successResponse.className = "response";
-  successResponse.id = "mce-success-response";
-  successResponse.style.display = "none";
-  successResponse.innerHTML = "<strong>Thank you for subscribing!</strong>";
-
-  responsesDiv.appendChild(errorResponse);
-  responsesDiv.appendChild(successResponse);
 
   const fieldGroup = document.createElement("div");
   fieldGroup.className = "mc-field-group";
@@ -55,13 +45,14 @@ function createMailchimpForm(buttonText) {
   emailInput.id = "mce-EMAIL";
   emailInput.required = true;
   emailInput.placeholder = "Email";
+  emailInput.autocomplete = "email";
+  emailInput.setAttribute("aria-label", "Email address");
 
   const sourceInput = document.createElement("input");
-  sourceInput.type = "text";
+  sourceInput.type = "hidden";
   sourceInput.name = "SOURCE";
   sourceInput.className = "text";
   sourceInput.id = "mce-SOURCE";
-  sourceInput.style.display = "none";
   sourceInput.setAttribute("value", window.location.pathname);
 
   fieldGroup.appendChild(emailInput);
@@ -85,17 +76,7 @@ function createMailchimpForm(buttonText) {
   submitButton.id = "mc-embedded-subscribe";
   submitButton.className = "button";
   submitButton.value = buttonText || "Notify me";
-  submitButton.onclick = function () {
-    if (document.getElementById("subscribeBar")) {
-      document.getElementById("subscribeBar").style.display = "none";
-    }
-    if (document.getElementById("mce-success-response")) {
-      document.getElementById("mce-success-response").style = "display: block";
-    }
-    setLocalStorage("subscribeBarClosed", "true");
-  };
 
-  scrollDiv.appendChild(responsesDiv);
   fieldGroup.appendChild(submitButton);
   scrollDiv.appendChild(fieldGroup);
   scrollDiv.appendChild(hiddenDiv);
@@ -118,11 +99,13 @@ function appendSubscribeBar() {
   subscribeText.textContent = "We're launching an anthology!";
 
   const mailchimpWrapper = document.createElement("div");
-  mailchimpWrapper.id = "mc_embed_shell";
+  mailchimpWrapper.className = "mailchimp-wrapper";
   mailchimpWrapper.appendChild(createMailchimpForm());
 
   const closeButton = document.createElement("button");
+  closeButton.type = "button";
   closeButton.className = "close-button";
+  closeButton.setAttribute("aria-label", "Dismiss newsletter signup");
   closeButton.textContent = "×";
   closeButton.onclick = function () {
     document.body.removeChild(subscribeBar);
@@ -133,47 +116,9 @@ function appendSubscribeBar() {
   subscribeBar.appendChild(subscribeText);
   subscribeBar.appendChild(mailchimpWrapper);
   document.body.appendChild(subscribeBar);
-  installMc();
 }
 
-function installMc() {
-  if (mcInstalled) {
-    return;
-  }
-
-  const script = document.createElement("script");
-  script.type = "text/javascript";
-  script.src = "//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js";
-
-  const inlineScript = document.createElement("script");
-  inlineScript.type = "text/javascript";
-  inlineScript.text = `
-        (function($) {
-            window.fnames = new Array();
-            window.ftypes = new Array();
-            fnames[0] = 'EMAIL';
-            ftypes[0] = 'email';
-            fnames[1] = 'SOURCE';
-            ftypes[1] = 'text';
-            fnames[3] = 'ADDRESS';
-            ftypes[3] = 'address';
-            fnames[4] = 'PHONE';
-            ftypes[4] = 'phone';
-        }(jQuery));
-        var $mcj = jQuery.noConflict(true);
-    `;
-
-  document.body.appendChild(script);
-  document.body.appendChild(inlineScript);
-  mcInstalled = true;
-}
-
-// Call the function on page load - chain with existing onload (e.g. Glide slider init)
-// #region agent log
-const prevOnload = window.onload;
-window.onload = function () {
-  fetch('http://127.0.0.1:7280/ingest/394f9e45-54d9-4c83-93b0-ba26f4874d9c',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'e618f8'},body:JSON.stringify({sessionId:'e618f8',location:'subscribe.js:onload',message:'subscribe onload fired',data:{prevOnloadCalled:true},timestamp:Date.now(),hypothesisId:'A',runId:'post-fix'})}).catch(()=>{});
-  // #endregion
-  if (typeof prevOnload === 'function') prevOnload();
+// Schedule independently so a carousel failure cannot prevent newsletter signup.
+document.addEventListener("DOMContentLoaded", function () {
   setTimeout(appendSubscribeBar, 4000);
-};
+});

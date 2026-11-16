@@ -6,7 +6,7 @@
     <meta name="description" content="A cozy, free storytelling game for 2+ people." />
     <meta name="keywords" content="Climate, Solarpunk, Game, Story, Roleplaying, Character Building, Storytelling" />
     <meta name="author" content="Todd Medema" />
-    <link rel="canonical" href="https://solarpunkpenpals.com/index.html" />
+    <link rel="canonical" href="https://solarpunkpenpals.com/" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="main.css" media="all" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -464,19 +464,16 @@
       <a href="https://toddmedema.com" target="_blank" rel="noopener noreferrer">Todd Medema</a> and
       <a href="https://taylorseamount.com" target="_blank" rel="noopener noreferrer">Taylor Seamount</a>. Cards by
       <a href="https://thefuture.wtf/" target="_blank" rel="noopener noreferrer">Solarpunk Futures</a>. Licensed under
-      <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="noopener noreferrer nofollow"
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer nofollow"
         >CC BY NC SA 4.0</a
       >. <a href="https://github.com/toddmedema/solarpunkpenpals" target="_blank" rel="noopener noreferrer nofollow">Github</a>.
     </footer>
 
     <script type="text/javascript" src="glide.min.js"></script>
     <script>
-      // #region agent log
       function insertGlideControls() {
-        fetch('http://127.0.0.1:7280/ingest/394f9e45-54d9-4c83-93b0-ba26f4874d9c',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'e618f8'},body:JSON.stringify({sessionId:'e618f8',location:'index.html:insertGlideControls',message:'insertGlideControls called',data:{GlideDefined:typeof Glide!=='undefined'},timestamp:Date.now(),hypothesisId:'A'})}).catch(()=>{});
-        // #endregion
         const glide = document.getElementById("glide");
-        if (!glide) return;
+        if (!glide || typeof Glide === "undefined") return;
         glide.classList.add("glide");
         const controlsHTML = `
           <div class="glide__controls" data-glide-el="controls">
@@ -498,15 +495,14 @@
         for (let i = temp.children.length - 1; i >= 0; i--) {
           glide.insertBefore(temp.children[i], glide.firstChild);
         }
-        new Glide(".glide").mount();
-        // #region agent log
-        fetch('http://127.0.0.1:7280/ingest/394f9e45-54d9-4c83-93b0-ba26f4874d9c',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'e618f8'},body:JSON.stringify({sessionId:'e618f8',location:'index.html:mount',message:'Glide mounted',data:{},timestamp:Date.now(),hypothesisId:'C'})}).catch(()=>{});
-        // #endregion
+        const slider = new Glide("#glide", { keyboard: false }).mount();
+        glide.addEventListener("keyup", function (event) {
+          if (event.target.closest("input, textarea, select, [contenteditable]")) return;
+          if (event.key === "ArrowLeft") slider.go("<");
+          if (event.key === "ArrowRight") slider.go(">");
+        });
       }
-      window.onload = insertGlideControls;
-      // #region agent log
-      fetch('http://127.0.0.1:7280/ingest/394f9e45-54d9-4c83-93b0-ba26f4874d9c',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'e618f8'},body:JSON.stringify({sessionId:'e618f8',location:'index.html:script',message:'inline script ran, onload assigned',data:{},timestamp:Date.now(),hypothesisId:'A'})}).catch(()=>{});
-      // #endregion
+      document.addEventListener("DOMContentLoaded", insertGlideControls);
 
       document.addEventListener("DOMContentLoaded", function () {
         const btn = document.getElementById("openCharacterInspiration");

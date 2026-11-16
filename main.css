@@ -539,6 +539,13 @@ table {
 }
 
 /* General */
+.container {
+  max-width: calc(100% - 20px);
+}
+.container .column,
+.container .columns {
+  max-width: 100%;
+}
 body {
   margin: 0 auto;
   background: #e6f2e8;
@@ -721,9 +728,6 @@ div.hrContent {
   margin-top: 0.5em;
   padding: 0.3em;
   box-sizing: border-box;
-  position: fixed;
-  bottom: 0;
-  z-index: 999;
   font-size: 60%;
 }
 
@@ -765,7 +769,6 @@ div.hrContent {
   box-sizing: border-box;
 }
 .glide *,
-,
 .glide-images * {
   box-sizing: inherit;
 }
@@ -864,6 +867,18 @@ div.hrContent {
 }
 #subscribeBar input {
   font-family: "Big Shoulders", sans-serif;
+}
+#subscribeBar .mc-field-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3em;
+  padding: 0 1.5em;
+}
+#subscribeBar input[type="email"] {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 #subscribeBar button {
   border: none;
