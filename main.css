@@ -521,7 +521,31 @@ table {
 }
 
 /* ===== Site-specific ===== */
+/* Skip link - visible on focus for keyboard users */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  padding: 0.75em 1em;
+  background: #298bc5;
+  color: #fff;
+  z-index: 10000;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
 /* General */
+.container {
+  max-width: calc(100% - 20px);
+}
+.container .column,
+.container .columns {
+  max-width: 100%;
+}
 body {
   margin: 0 auto;
   background: #e6f2e8;
@@ -630,7 +654,7 @@ a:hover .svgicon {
 #title h1 {
   font-weight: 500;
   text-transform: uppercase;
-  font-size: 52px;
+  font-size: 48px;
   padding: 20px 0;
   background: linear-gradient(30deg, #ffdf22, #55490b);
   background: -webkit-linear-gradient(30deg, #ffdf22, #55490b);
@@ -691,10 +715,10 @@ div.hrContent {
 .cta {
   text-align: center;
 }
-.cta button a {
+.cta a.button {
   color: white !important;
 }
-.cta button a:hover {
+.cta a.button:hover {
   text-decoration: none;
 }
 
@@ -704,9 +728,6 @@ div.hrContent {
   margin-top: 0.5em;
   padding: 0.3em;
   box-sizing: border-box;
-  position: fixed;
-  bottom: 0;
-  z-index: 999;
   font-size: 60%;
 }
 
@@ -748,7 +769,6 @@ div.hrContent {
   box-sizing: border-box;
 }
 .glide *,
-,
 .glide-images * {
   box-sizing: inherit;
 }
@@ -832,6 +852,53 @@ div.hrContent {
 }
 .glide--rtl {
   direction: rtl;
+}
+
+#subscribeBar {
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 1.1em;
+  left: 0;
+  width: 100%;
+  background-color: #a0cbb3;
+  padding-top: 10px;
+  text-align: center;
+  z-index: 999999;
+}
+#subscribeBar input {
+  font-family: "Big Shoulders", sans-serif;
+}
+#subscribeBar .mc-field-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3em;
+  padding: 0 1.5em;
+}
+#subscribeBar input[type="email"] {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+#subscribeBar button {
+  border: none;
+}
+#subscribeBar button.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 10px;
+  cursor: pointer;
+  background: none;
+  font-size: 1.1em;
+}
+#subscribeBar #mc-embedded-subscribe {
+  margin-left: 0.2em;
+}
+@media only screen and (max-width: 500px) {
+  #subscribeBar #mc_embed_shell {
+    margin-top: 0.5em;
+  }
 }
 
 #characterInspirations {
